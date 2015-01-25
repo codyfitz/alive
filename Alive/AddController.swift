@@ -10,6 +10,8 @@ import UIKit
 
 class AddController: UIViewController {
 
+    @IBOutlet weak var customBack: UIButton!
+    
     @IBOutlet weak var roomNameTF: UITextField!
     
     @IBOutlet weak var charLeft: UILabel!
@@ -18,7 +20,11 @@ class AddController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = false
+        //self.navigationController?.navigationBar.hidden = false
+        //self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        //var color = UIColor(hue: 0.53888, saturation: 0.59, brightness: 0.50, alpha: 1)
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: color,
+            //NSFontAttributeName: UIFont(name: "Calibri-Bold", size: 24)!]
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +33,9 @@ class AddController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func customBack(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation

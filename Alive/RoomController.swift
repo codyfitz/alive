@@ -20,7 +20,13 @@ class RoomController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.hidden = false
+        //self.navigationController?.navigationBar.hidden = false
+        //self.navigationController?.navigationBar.barTintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
+        //var color = UIColor(hue: 0.76, saturation: 0.59, brightness: 0.50, alpha: 1)
+        //var color = UIColor .whiteColor()
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: color,
+            //NSFontAttributeName: UIFont(name: "Calibri-Bold", size: 30)!]
+
         // Do any additional setup after loading the view.
     }
 

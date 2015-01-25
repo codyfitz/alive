@@ -27,6 +27,11 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         searchField.attributedPlaceholder = placeholder;
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.hidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
