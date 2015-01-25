@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController, UITextFieldDelegate {
+class SignController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginBottomConstraint: NSLayoutConstraint!
 
@@ -23,13 +23,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func loginVerify(sender: UIButton) {
         var usr = ""
         var pw = ""
-        if userNameTextField.text == usr && passwordTextField.text == pw && loginButton.currentTitle == "login" {
+        if userNameTextField.text == usr && passwordTextField.text == pw {
             self.performSegueWithIdentifier("LoginToRooms", sender: nil)
-            userNameTextField.resignFirstResponder()
-            passwordTextField.resignFirstResponder()
-        }
-        else if userNameTextField.text == usr && passwordTextField.text == pw && loginButton.currentTitle == "signup" {
-            self.performSegueWithIdentifier("Signup", sender: nil)
             userNameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
         }

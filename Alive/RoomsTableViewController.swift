@@ -10,6 +10,9 @@ import UIKit
 
 class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var searchBar: UIImageView!
+    
+    @IBOutlet weak var searchField: UITextField!
     
     @IBOutlet weak var tView: UITableView!
     
@@ -20,6 +23,8 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true
+        var placeholder = NSAttributedString(string: "find your room", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.219, green: 0.427, blue: 0.498, alpha: 1.0)])
+        searchField.attributedPlaceholder = placeholder;
         // Do any additional setup after loading the view.
     }
 
