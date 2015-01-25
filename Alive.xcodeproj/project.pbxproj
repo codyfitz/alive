@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176143DD1A48AF650003C455 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143DC1A48AF650003C455 /* LoginController.swift */; };
+		176143DF1A48B1850003C455 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143DE1A48B1850003C455 /* SignupController.swift */; };
+		176143E11A48C50E0003C455 /* RoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143E01A48C50E0003C455 /* RoomsTableViewController.swift */; };
+		176143E31A48CBCE0003C455 /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143E21A48CBCE0003C455 /* AddController.swift */; };
+		176143E51A48CEDF0003C455 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143E41A48CEDF0003C455 /* SettingsController.swift */; };
+		176143E71A48D01D0003C455 /* RoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176143E61A48D01D0003C455 /* RoomController.swift */; };
+		176143F21A48E29F0003C455 /* Calibri Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176143EE1A48E29F0003C455 /* Calibri Bold Italic.ttf */; };
+		176143F31A48E29F0003C455 /* Calibri Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176143EF1A48E29F0003C455 /* Calibri Bold.ttf */; };
+		176143F41A48E29F0003C455 /* Calibri Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176143F01A48E29F0003C455 /* Calibri Italic.ttf */; };
+		176143F51A48E29F0003C455 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176143F11A48E29F0003C455 /* Calibri.ttf */; };
+		176143F61A48E3030003C455 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DEB9DE1A4765BC00B7184A /* LaunchScreen.xib */; };
+		176143F71A48E3060003C455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17DEB9D91A4765BC00B7184A /* Main.storyboard */; };
 		17DEB9D61A4765BC00B7184A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9D51A4765BC00B7184A /* AppDelegate.swift */; };
 		17DEB9D81A4765BC00B7184A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9D71A4765BC00B7184A /* ViewController.swift */; };
-		17DEB9DB1A4765BC00B7184A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17DEB9D91A4765BC00B7184A /* Main.storyboard */; };
 		17DEB9DD1A4765BC00B7184A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17DEB9DC1A4765BC00B7184A /* Images.xcassets */; };
-		17DEB9E01A4765BC00B7184A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17DEB9DE1A4765BC00B7184A /* LaunchScreen.xib */; };
 		17DEB9EC1A4765BC00B7184A /* AliveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9EB1A4765BC00B7184A /* AliveTests.swift */; };
+		17DEB9F61A47696B00B7184A /* RoomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9F51A47696B00B7184A /* RoomList.swift */; };
+		17DEB9FC1A4789B600B7184A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9FB1A4789B600B7184A /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +38,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		176143DC1A48AF650003C455 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		176143DE1A48B1850003C455 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		176143E01A48C50E0003C455 /* RoomsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomsTableViewController.swift; sourceTree = "<group>"; };
+		176143E21A48CBCE0003C455 /* AddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
+		176143E41A48CEDF0003C455 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		176143E61A48D01D0003C455 /* RoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomController.swift; sourceTree = "<group>"; };
+		176143EE1A48E29F0003C455 /* Calibri Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold Italic.ttf"; sourceTree = "<group>"; };
+		176143EF1A48E29F0003C455 /* Calibri Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Bold.ttf"; sourceTree = "<group>"; };
+		176143F01A48E29F0003C455 /* Calibri Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calibri Italic.ttf"; sourceTree = "<group>"; };
+		176143F11A48E29F0003C455 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		17DEB9D01A4765BC00B7184A /* Alive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DEB9D41A4765BC00B7184A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17DEB9D51A4765BC00B7184A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +58,8 @@
 		17DEB9E51A4765BC00B7184A /* AliveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AliveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DEB9EA1A4765BC00B7184A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17DEB9EB1A4765BC00B7184A /* AliveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliveTests.swift; sourceTree = "<group>"; };
+		17DEB9F51A47696B00B7184A /* RoomList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomList.swift; sourceTree = "<group>"; };
+		17DEB9FB1A4789B600B7184A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		176143EC1A48E0EA0003C455 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				176143ED1A48E1060003C455 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		176143ED1A48E1060003C455 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				176143EE1A48E29F0003C455 /* Calibri Bold Italic.ttf */,
+				176143EF1A48E29F0003C455 /* Calibri Bold.ttf */,
+				176143F01A48E29F0003C455 /* Calibri Italic.ttf */,
+				176143F11A48E29F0003C455 /* Calibri.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		17DEB9C71A4765BC00B7184A = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +121,20 @@
 			isa = PBXGroup;
 			children = (
 				17DEB9D51A4765BC00B7184A /* AppDelegate.swift */,
-				17DEB9D71A4765BC00B7184A /* ViewController.swift */,
 				17DEB9D91A4765BC00B7184A /* Main.storyboard */,
+				17DEB9D71A4765BC00B7184A /* ViewController.swift */,
+				176143DC1A48AF650003C455 /* LoginController.swift */,
+				176143DE1A48B1850003C455 /* SignupController.swift */,
+				17DEB9FB1A4789B600B7184A /* NavigationController.swift */,
+				176143E01A48C50E0003C455 /* RoomsTableViewController.swift */,
+				176143E61A48D01D0003C455 /* RoomController.swift */,
+				176143E21A48CBCE0003C455 /* AddController.swift */,
+				176143E41A48CEDF0003C455 /* SettingsController.swift */,
 				17DEB9DC1A4765BC00B7184A /* Images.xcassets */,
 				17DEB9DE1A4765BC00B7184A /* LaunchScreen.xib */,
+				176143EC1A48E0EA0003C455 /* Resources */,
 				17DEB9D31A4765BC00B7184A /* Supporting Files */,
+				17DEB9F51A47696B00B7184A /* RoomList.swift */,
 			);
 			path = Alive;
 			sourceTree = "<group>";
@@ -192,9 +244,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17DEB9DB1A4765BC00B7184A /* Main.storyboard in Resources */,
-				17DEB9E01A4765BC00B7184A /* LaunchScreen.xib in Resources */,
+				176143F41A48E29F0003C455 /* Calibri Italic.ttf in Resources */,
+				176143F21A48E29F0003C455 /* Calibri Bold Italic.ttf in Resources */,
+				176143F51A48E29F0003C455 /* Calibri.ttf in Resources */,
+				176143F71A48E3060003C455 /* Main.storyboard in Resources */,
+				176143F61A48E3030003C455 /* LaunchScreen.xib in Resources */,
 				17DEB9DD1A4765BC00B7184A /* Images.xcassets in Resources */,
+				176143F31A48E29F0003C455 /* Calibri Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +268,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176143E51A48CEDF0003C455 /* SettingsController.swift in Sources */,
+				176143DD1A48AF650003C455 /* LoginController.swift in Sources */,
+				176143E71A48D01D0003C455 /* RoomController.swift in Sources */,
+				176143DF1A48B1850003C455 /* SignupController.swift in Sources */,
+				17DEB9FC1A4789B600B7184A /* NavigationController.swift in Sources */,
+				176143E31A48CBCE0003C455 /* AddController.swift in Sources */,
+				17DEB9F61A47696B00B7184A /* RoomList.swift in Sources */,
 				17DEB9D81A4765BC00B7184A /* ViewController.swift in Sources */,
 				17DEB9D61A4765BC00B7184A /* AppDelegate.swift in Sources */,
+				176143E11A48C50E0003C455 /* RoomsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +471,7 @@
 				17DEB9F11A4765BC00B7184A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17DEB9F21A4765BC00B7184A /* Build configuration list for PBXNativeTarget "AliveTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +480,7 @@
 				17DEB9F41A4765BC00B7184A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
