@@ -29,14 +29,14 @@ class LoginController: UIViewController, UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
         }
         else if userNameTextField.text == usr && passwordTextField.text == pw && loginButton.currentTitle == "signup" {
-            self.performSegueWithIdentifier("Signup", sender: nil)
+            self.performSegueWithIdentifier("signup", sender: nil)
             userNameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
         }
         else {
             userNameTextField.resignFirstResponder()
             passwordTextField.resignFirstResponder()
-        }
+        } 
     }
 
 

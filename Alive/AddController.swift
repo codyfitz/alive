@@ -17,7 +17,6 @@ class AddController: UIViewController {
     @IBOutlet weak var charLeft: UILabel!
     
     @IBOutlet weak var createRoom: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.hidden = false

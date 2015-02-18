@@ -17,6 +17,13 @@ class RoomController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var numPeople: UILabel!
     @IBOutlet weak var totalMins: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var roomName: UILabel!
+    
+    @IBAction func goBack(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

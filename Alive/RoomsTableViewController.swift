@@ -39,13 +39,22 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return roomList.rooms.count
+        //This is real
+        //return roomList.rooms.count
+        
+        //This is test
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
-        cell.textLabel?.text = roomList.rooms[indexPath.row].name
+        //This is the real one
+        //cell.textLabel?.text = roomList.rooms[indexPath.row].name
+        
+        //This is a tester
+        cell.textLabel?.text = "#hi"
+
         //cell.detailTextLabel?.text = roomList.rooms[indexPath.row].desc
         
         return cell
@@ -53,7 +62,25 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //go to that particular room
+        let cell: UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cell.backgroundColor = UIColor(red: 1, green: 0.3529411, blue: 0.3529411, alpha: 1)
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("RoomListToRoom", sender: nil)
+        
+        
+        
+        
     }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor(red: 1, green: 0.3529411, blue: 0.3529411, alpha: 1)
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
+    }
+
+
 
     /*
     // MARK: - Navigation
