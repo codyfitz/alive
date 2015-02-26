@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginController: UIViewController, UITextFieldDelegate {
+    
+    let baseURL = "http://localhost:8080"
     
     @IBOutlet weak var loginBottomConstraint: NSLayoutConstraint!
 
@@ -21,22 +25,41 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var graySpace: UIImageView!
     
     @IBAction func loginVerify(sender: UIButton) {
-        var usr = ""
-        var pw = ""
-        if userNameTextField.text == usr && passwordTextField.text == pw && loginButton.currentTitle == "login" {
-            self.performSegueWithIdentifier("LoginToRooms", sender: nil)
-            userNameTextField.resignFirstResponder()
-            passwordTextField.resignFirstResponder()
+        var usr = userNameTextField.text
+        var pw = passwordTextField.text
+        
+        var (success, message) = validateCredentialsLocally(usr, password: pw)
+        if !success {
+            notifyError(message, self)
+            return
         }
-        else if userNameTextField.text == usr && passwordTextField.text == pw && loginButton.currentTitle == "signup" {
-            self.performSegueWithIdentifier("signup", sender: nil)
-            userNameTextField.resignFirstResponder()
-            passwordTextField.resignFirstResponder()
-        }
-        else {
-            userNameTextField.resignFirstResponder()
-            passwordTextField.resignFirstResponder()
-        } 
+        
+        let endpoint = HTTPEndpoint(
+            method: .POST,
+            route: "/" + loginButton.currentTitle!,
+            encoding: .JSON, authenticate: false)
+        
+        endpoint.request(["username": usr, "password": pw],
+            sender:self,
+            completionHandler: {
+                (package) -> Void  in
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject( package["access_token"].string, forKey: "access_token")
+                defaults.setObject( package["user_id"].string, forKey: "user_id")
+           
+                if self.loginButton.currentTitle == "signup" {
+                    self.performSegueWithIdentifier("signup", sender: nil)
+                } else {
+                    self.performSegueWithIdentifier("LoginToRooms", sender: nil)
+                }
+                self.userNameTextField.resignFirstResponder()
+                self.passwordTextField.resignFirstResponder()
+            })
+    }
+    
+    func validateCredentialsLocally(usrname: String!, password: String!) -> (Bool,String){
+        return (true,"");
     }
 
 

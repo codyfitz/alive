@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    let baseURL = "http://localhost:8080"
+    var rooms = [String]()
+    var refreshControl:UIRefreshControl
+    
     @IBOutlet weak var searchBar: UIImageView!
     
     @IBOutlet weak var searchField: UITextField!
@@ -20,12 +26,35 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var settingsButton: UIButton!
     
+    required init(coder aDecoder: NSCoder) {
+        self.refreshControl = UIRefreshControl()
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.hidden = true
         var placeholder = NSAttributedString(string: "find your room", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.219, green: 0.427, blue: 0.498, alpha: 1.0)])
         searchField.attributedPlaceholder = placeholder;
-        // Do any additional setup after loading the view.
+        
+        self.getRooms()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: Selector("getRooms:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func getRooms(){
+        println("called")
+        let getRooms = HTTPEndpoint(method: .GET, route: "/rooms",
+            encoding: .URL, authenticate: true)
+        
+        getRooms.request([String:String](), sender: self, completionHandler: {
+            (package) -> Void in
+            for (index: String, subJson: JSON) in package["rooms"] {
+                self.rooms.append("#"+subJson["name"].stringValue)
+                self.tView.reloadData()
+            }
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -39,24 +68,12 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //This is real
-        //return roomList.rooms.count
-        
-        //This is test
-        return 1
+        return rooms.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
-        
-        //This is the real one
-        //cell.textLabel?.text = roomList.rooms[indexPath.row].name
-        
-        //This is a tester
-        cell.textLabel?.text = "#hi"
-
-        //cell.detailTextLabel?.text = roomList.rooms[indexPath.row].desc
-        
+        cell.textLabel?.text = rooms[indexPath.row]
         return cell
     }
     
@@ -68,10 +85,6 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.performSegueWithIdentifier("RoomListToRoom", sender: nil)
-        
-        
-        
-        
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -79,7 +92,7 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
     }
-
+    
 
 
     /*
