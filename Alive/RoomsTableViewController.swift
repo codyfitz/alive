@@ -9,11 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Starscream
 
-class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let baseURL = "http://localhost:8080"
-    var rooms = [String]()
+    let webSocketHost = "localhost:8080"
+    var rooms = [(String,String)]()
     var refreshControl:UIRefreshControl
     
     @IBOutlet weak var searchBar: UIImageView!
@@ -43,19 +46,6 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         self.refreshControl.addTarget(self, action: Selector("getRooms:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    func getRooms(){
-        println("called")
-        let getRooms = HTTPEndpoint(method: .GET, route: "/rooms",
-            encoding: .URL, authenticate: true)
-        
-        getRooms.request([String:String](), sender: self, completionHandler: {
-            (package) -> Void in
-            for (index: String, subJson: JSON) in package["rooms"] {
-                self.rooms.append("#"+subJson["name"].stringValue)
-                self.tView.reloadData()
-            }
-        })
-    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -67,13 +57,16 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    /* TABLEVIEW PROTOCOL FUNCTIONS */
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rooms.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
-        cell.textLabel?.text = rooms[indexPath.row]
+        let (name, id) = rooms[indexPath.row]
+        cell.textLabel?.text = name
         return cell
     }
     
@@ -94,6 +87,23 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
 
+    
+    /* HELPER FUNCTIONS */
+    
+    func getRooms(){
+        let getRooms = HTTPEndpoint(method: .GET, route: "/rooms",
+            encoding: .URL, authenticate: true)
+        
+        getRooms.request([String:String](), sender: self, completionHandler: {
+            (package) -> Void in
+            for (index: String, subJson: JSON) in package["rooms"] {
+                let name = "#"+subJson["name"].stringValue
+                let id = subJson["_id"].stringValue
+                self.rooms.append((name, id))
+                self.tView.reloadData()
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation
