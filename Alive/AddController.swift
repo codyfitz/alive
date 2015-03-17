@@ -22,25 +22,29 @@ class AddController: UIViewController {
     
     @IBOutlet weak var createRoom: UIButton!
     
+    @IBAction func customBack(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     
     @IBAction func createRoomClicked(sender: UIButton!) {
-        // check char limit
-        if self.charLimit < countElements(self.roomNameTF.text) {
+        if (50 < countElements(self.roomNameTF.text)) {
             notifyError("\(self.charLimit) character limit", self)
             return
         }
         
         // make request to post /room
-        let postRoom = HTTPEndpoint(method: .POST, route: "/room", encoding: .JSON, authenticate: true)
-       
+        var postRoom:HTTPEndpoint! = HTTPEndpoint(method: .POST, route: "/room", encoding: .JSON, authenticate: true)
+        
         var parameters = [String:String]()
         parameters["room_name"] = self.roomNameTF.text
         
-        postRoom.request(parameters,
+        postRoom.request(
+            parameters,
             sender: self,
             completionHandler: {
-                (package: JSON!) -> Void in
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                (package: JSON!) -> (Void) in
+                
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
         )
     }
@@ -58,21 +62,6 @@ class AddController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func customBack(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

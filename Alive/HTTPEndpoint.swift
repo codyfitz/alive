@@ -25,9 +25,10 @@ public class HTTPEndpoint {
         self.encoding = encoding
         self.authenticate = authenticate
     }
+    
     func request( var parameters: Dictionary<String, String>!,
         sender: UIViewController,
-        completionHandler: ( (pacakge:JSON!) -> Void )?){
+        completionHandler: ( (package:JSON!) -> Void )?){
         
         let userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let access_token: String? = userDefault.objectForKey("access_token") as String?
