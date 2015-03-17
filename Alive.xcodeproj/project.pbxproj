@@ -26,6 +26,13 @@
 		17DEB9FC1A4789B600B7184A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DEB9FB1A4789B600B7184A /* NavigationController.swift */; };
 		4A4079201A9EBBA00002022A /* HTTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40791F1A9EBBA00002022A /* HTTPEndpoint.swift */; };
 		4A4079221A9ECED80002022A /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4079211A9ECED80002022A /* UIUtil.swift */; };
+		4A770A1B1AA3DA6D007F03C7 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A1A1AA3DA6D007F03C7 /* SRWebSocket.m */; };
+		4A770A1F1AA3DC27007F03C7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A770A1E1AA3DC27007F03C7 /* libicucore.dylib */; };
+		4A770A251AA3DCC8007F03C7 /* SocketAckHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A201AA3DCC8007F03C7 /* SocketAckHandler.swift */; };
+		4A770A261AA3DCC8007F03C7 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A211AA3DCC8007F03C7 /* SocketEvent.swift */; };
+		4A770A271AA3DCC8007F03C7 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A221AA3DCC8007F03C7 /* SocketEventHandler.swift */; };
+		4A770A281AA3DCC8007F03C7 /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A231AA3DCC8007F03C7 /* SocketIOClient.swift */; };
+		4A770A291AA3DCC8007F03C7 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A241AA3DCC8007F03C7 /* SwiftRegex.swift */; };
 		93B327E6DBAD78AC709F8A4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FAA9BE7A6E6E303EB233B6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +71,17 @@
 		3919A5A194556FA183225DB1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4A40791F1A9EBBA00002022A /* HTTPEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPEndpoint.swift; sourceTree = "<group>"; };
 		4A4079211A9ECED80002022A /* UIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
+		4A770A171AA3DA6B007F03C7 /* Alive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Alive-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A770A181AA3DA6D007F03C7 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		4A770A191AA3DA6D007F03C7 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		4A770A1A1AA3DA6D007F03C7 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		4A770A1C1AA3DC0B007F03C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4A770A1E1AA3DC27007F03C7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		4A770A201AA3DCC8007F03C7 /* SocketAckHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckHandler.swift; sourceTree = "<group>"; };
+		4A770A211AA3DCC8007F03C7 /* SocketEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
+		4A770A221AA3DCC8007F03C7 /* SocketEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
+		4A770A231AA3DCC8007F03C7 /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClient.swift; sourceTree = "<group>"; };
+		4A770A241AA3DCC8007F03C7 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 		DA1A9A987489A54DF1855F51 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2FAA9BE7A6E6E303EB233B6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A770A1F1AA3DC27007F03C7 /* libicucore.dylib in Frameworks */,
 				93B327E6DBAD78AC709F8A4F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +109,8 @@
 		12AC2DB5F5EC9376426BE699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A770A1E1AA3DC27007F03C7 /* libicucore.dylib */,
+				4A770A1C1AA3DC0B007F03C7 /* Foundation.framework */,
 				E2FAA9BE7A6E6E303EB233B6 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -137,6 +158,7 @@
 		17DEB9D21A4765BC00B7184A /* Alive */ = {
 			isa = PBXGroup;
 			children = (
+				4A770A2B1AA3DCE1007F03C7 /* socketIO */,
 				17DEB9D51A4765BC00B7184A /* AppDelegate.swift */,
 				17DEB9D91A4765BC00B7184A /* Main.storyboard */,
 				17DEB9D71A4765BC00B7184A /* ViewController.swift */,
@@ -153,6 +175,7 @@
 				176143EC1A48E0EA0003C455 /* Resources */,
 				17DEB9D31A4765BC00B7184A /* Supporting Files */,
 				17DEB9F51A47696B00B7184A /* RoomList.swift */,
+				4A770A171AA3DA6B007F03C7 /* Alive-Bridging-Header.h */,
 			);
 			path = Alive;
 			sourceTree = "<group>";
@@ -180,6 +203,21 @@
 				17DEB9EA1A4765BC00B7184A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A770A2B1AA3DCE1007F03C7 /* socketIO */ = {
+			isa = PBXGroup;
+			children = (
+				4A770A201AA3DCC8007F03C7 /* SocketAckHandler.swift */,
+				4A770A211AA3DCC8007F03C7 /* SocketEvent.swift */,
+				4A770A221AA3DCC8007F03C7 /* SocketEventHandler.swift */,
+				4A770A231AA3DCC8007F03C7 /* SocketIOClient.swift */,
+				4A770A241AA3DCC8007F03C7 /* SwiftRegex.swift */,
+				4A770A181AA3DA6D007F03C7 /* SocketRocket-Prefix.pch */,
+				4A770A191AA3DA6D007F03C7 /* SRWebSocket.h */,
+				4A770A1A1AA3DA6D007F03C7 /* SRWebSocket.m */,
+			);
+			name = socketIO;
 			sourceTree = "<group>";
 		};
 		C9FB090E67DE878A2AEB8C51 /* Pods */ = {
@@ -346,17 +384,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A770A1B1AA3DA6D007F03C7 /* SRWebSocket.m in Sources */,
 				176143E51A48CEDF0003C455 /* SettingsController.swift in Sources */,
 				176143DD1A48AF650003C455 /* LoginController.swift in Sources */,
 				4A4079201A9EBBA00002022A /* HTTPEndpoint.swift in Sources */,
 				176143E71A48D01D0003C455 /* RoomController.swift in Sources */,
 				17DEB9FC1A4789B600B7184A /* NavigationController.swift in Sources */,
 				176143E31A48CBCE0003C455 /* AddController.swift in Sources */,
+				4A770A251AA3DCC8007F03C7 /* SocketAckHandler.swift in Sources */,
 				17DEB9F61A47696B00B7184A /* RoomList.swift in Sources */,
 				17DEB9D81A4765BC00B7184A /* ViewController.swift in Sources */,
 				4A4079221A9ECED80002022A /* UIUtil.swift in Sources */,
+				4A770A261AA3DCC8007F03C7 /* SocketEvent.swift in Sources */,
+				4A770A271AA3DCC8007F03C7 /* SocketEventHandler.swift in Sources */,
 				17DEB9D61A4765BC00B7184A /* AppDelegate.swift in Sources */,
+				4A770A291AA3DCC8007F03C7 /* SwiftRegex.swift in Sources */,
 				176143E11A48C50E0003C455 /* RoomsTableViewController.swift in Sources */,
+				4A770A281AA3DCC8007F03C7 /* SocketIOClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,9 +526,12 @@
 			baseConfigurationReference = DA1A9A987489A54DF1855F51 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Alive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Alive/Alive-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -493,9 +540,11 @@
 			baseConfigurationReference = 3919A5A194556FA183225DB1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Alive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Alive/Alive-Bridging-Header.h";
 			};
 			name = Release;
 		};

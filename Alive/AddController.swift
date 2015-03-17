@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class AddController: UIViewController {
 
+    let charLimit = 50
+    
     @IBOutlet weak var customBack: UIButton!
     
     @IBOutlet weak var roomNameTF: UITextField!
@@ -17,6 +21,31 @@ class AddController: UIViewController {
     @IBOutlet weak var charLeft: UILabel!
     
     @IBOutlet weak var createRoom: UIButton!
+    
+    
+    @IBAction func createRoomClicked(sender: UIButton!) {
+        // check char limit
+        if self.charLimit < countElements(self.roomNameTF.text) {
+            notifyError("\(self.charLimit) character limit", self)
+            return
+        }
+        
+        // make request to post /room
+        let postRoom = HTTPEndpoint(method: .POST, route: "/room", encoding: .JSON, authenticate: true)
+       
+        var parameters = [String:String]()
+        parameters["room_name"] = self.roomNameTF.text
+        
+        postRoom.request(parameters,
+            sender: self,
+            completionHandler: {
+                (package: JSON!) -> Void in
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        )
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationController?.navigationBar.hidden = false

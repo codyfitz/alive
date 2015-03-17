@@ -10,6 +10,9 @@ import UIKit
 
 class RoomController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var roomId: String = ""
+    var socket: SocketIOClient?
+
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var tView: UITableView!
@@ -22,8 +25,10 @@ class RoomController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func goBack(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+        if let s = socket {
+            s.emit("leave")
+        }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +38,36 @@ class RoomController: UIViewController, UITableViewDataSource, UITableViewDelega
         //var color = UIColor .whiteColor()
         //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: color,
             //NSFontAttributeName: UIFont(name: "Calibri-Bold", size: 30)!]
-
         // Do any additional setup after loading the view.
+        
+        if let s = socket {
+            println("setting up socket for room_id: \(self.roomId)")
+            // user list
+            s.on("user list", callback: { data, ack in
+                println("user list received:")
+                println("\(data)")
+            })
+           
+            // guest id
+            s.on("guest joined", callback: { data, ack in
+                println("guest joined (guest id: \(data))")
+            })
+           
+            // user object
+            s.on("user joined", callback: { data, ack in
+                println("user joined")
+                println("\(data)")
+            })
+            
+            // user object
+            s.on("user left", callback: { data, ack in
+                println("user left")
+            })
+           
+            s.emit("join", ["room" : self.roomId])
+        } else {
+            println("socket error (nil)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,7 +94,7 @@ class RoomController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //GO TO USER?
     }
-
+    
     /*
     // MARK: - Navigation
 

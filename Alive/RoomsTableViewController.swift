@@ -17,7 +17,7 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     let baseURL = "http://localhost:8080"
     let webSocketHost = "localhost:8080"
     var rooms = [(String,String)]()
-    var refreshControl:UIRefreshControl
+    var socket: SocketIOClient?
     
     @IBOutlet weak var searchBar: UIImageView!
     
@@ -29,11 +29,7 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    required init(coder aDecoder: NSCoder) {
-        self.refreshControl = UIRefreshControl()
-        super.init(coder: aDecoder)
-    }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,10 +38,22 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         searchField.attributedPlaceholder = placeholder;
         
         self.getRooms()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl.addTarget(self, action: Selector("getRooms:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.socket = SocketIOClient(socketURL: "http://localhost:8080", opts: [
+            "reconnects": true, // default true
+            "reconnectAttempts": 5, // default -1 (infinite tries)
+            "reconnectWait": 5, // default 10
+            ])
+        
+        self.socket!.on("connect") { data, ack in
+            println("socket connected")
+            let userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            let user_id: String? = userDefault.objectForKey("user_id") as String?
+            self.socket!.emit("enter", ["user" : user_id!])
+        }
+        
+        socket!.connect()
     }
-    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -76,7 +84,7 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.backgroundColor = UIColor(red: 1, green: 0.3529411, blue: 0.3529411, alpha: 1)
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         self.performSegueWithIdentifier("RoomListToRoom", sender: nil)
     }
     
@@ -85,8 +93,6 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
     }
-    
-
     
     /* HELPER FUNCTIONS */
     
@@ -105,14 +111,26 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         })
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("prepareforsegue called")
+        
+        if let i = segue.identifier {
+            if i == "roomListToRoom" {
+                var vc: RoomController = segue.destinationViewController as RoomController
+                let indexPath = self.tView.indexPathForSelectedRow()!
+                let (name, id) = self.rooms[indexPath.row]
+                tView.deselectRowAtIndexPath(indexPath, animated: true)
+                vc.roomId = id
+                vc.socket = self.socket
+            }
+        }
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
