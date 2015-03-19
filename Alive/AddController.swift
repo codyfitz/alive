@@ -41,11 +41,7 @@ class AddController: UIViewController {
         postRoom.request(
             parameters,
             sender: self,
-            completionHandler: {
-                (package: JSON!) -> (Void) in
-                
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-            }
+            completionHandler: nil
         )
     }
     

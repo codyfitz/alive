@@ -33,6 +33,7 @@
 		4A770A271AA3DCC8007F03C7 /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A221AA3DCC8007F03C7 /* SocketEventHandler.swift */; };
 		4A770A281AA3DCC8007F03C7 /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A231AA3DCC8007F03C7 /* SocketIOClient.swift */; };
 		4A770A291AA3DCC8007F03C7 /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A770A241AA3DCC8007F03C7 /* SwiftRegex.swift */; };
+		4AAFF68A1ABA5B640042D650 /* AddRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAFF6891ABA5B640042D650 /* AddRoomController.swift */; };
 		93B327E6DBAD78AC709F8A4F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FAA9BE7A6E6E303EB233B6 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		4A770A221AA3DCC8007F03C7 /* SocketEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
 		4A770A231AA3DCC8007F03C7 /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClient.swift; sourceTree = "<group>"; };
 		4A770A241AA3DCC8007F03C7 /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
+		4AAFF6891ABA5B640042D650 /* AddRoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoomController.swift; sourceTree = "<group>"; };
 		DA1A9A987489A54DF1855F51 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2FAA9BE7A6E6E303EB233B6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				4A40791F1A9EBBA00002022A /* HTTPEndpoint.swift */,
 				176143E61A48D01D0003C455 /* RoomController.swift */,
 				176143E21A48CBCE0003C455 /* AddController.swift */,
+				4AAFF6891ABA5B640042D650 /* AddRoomController.swift */,
 				176143E41A48CEDF0003C455 /* SettingsController.swift */,
 				17DEB9DC1A4765BC00B7184A /* Images.xcassets */,
 				17DEB9DE1A4765BC00B7184A /* LaunchScreen.xib */,
@@ -398,6 +401,7 @@
 				4A770A261AA3DCC8007F03C7 /* SocketEvent.swift in Sources */,
 				4A770A271AA3DCC8007F03C7 /* SocketEventHandler.swift in Sources */,
 				17DEB9D61A4765BC00B7184A /* AppDelegate.swift in Sources */,
+				4AAFF68A1ABA5B640042D650 /* AddRoomController.swift in Sources */,
 				4A770A291AA3DCC8007F03C7 /* SwiftRegex.swift in Sources */,
 				176143E11A48C50E0003C455 /* RoomsTableViewController.swift in Sources */,
 				4A770A281AA3DCC8007F03C7 /* SocketIOClient.swift in Sources */,

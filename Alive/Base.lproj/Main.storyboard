@@ -239,7 +239,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MrT-T5-fZV" kind="push" identifier="RoomListToAdd" id="Slk-ch-Jow"/>
+                                    <segue destination="MrT-T5-fZV" kind="push" id="d5K-jV-RrV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.89999999999999991" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd8-0G-Doj">
@@ -297,19 +297,29 @@
                         <outlet property="SearchField" destination="bkH-uk-Oug" id="zUC-Hx-H7l"/>
                         <outlet property="addButton" destination="BCZ-zQ-2pc" id="Pty-29-7cu"/>
                         <outlet property="searchBar" destination="DLI-ij-9I0" id="ubi-gh-8NN"/>
+                        <outlet property="searchDisplayController" destination="Mv8-CE-tYc" id="ujN-gV-iNW"/>
+                        <outlet property="searchField" destination="bkH-uk-Oug" id="NKA-jy-aeT"/>
                         <outlet property="settingsButton" destination="Xd8-0G-Doj" id="2gf-s9-rSG"/>
                         <outlet property="tView" destination="Oug-kI-PXz" id="dRa-ko-Tbr"/>
                         <segue destination="8mA-ua-GSF" kind="push" identifier="RoomListToRoom" id="s1u-a8-2KL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EK6-yH-n3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Mv8-CE-tYc">
+                    <connections>
+                        <outlet property="delegate" destination="Pvx-4w-4lT" id="19R-D8-wsL"/>
+                        <outlet property="searchContentsController" destination="Pvx-4w-4lT" id="qxA-jL-pHe"/>
+                        <outlet property="searchResultsDataSource" destination="Pvx-4w-4lT" id="dXJ-vM-oqx"/>
+                        <outlet property="searchResultsDelegate" destination="Pvx-4w-4lT" id="amF-Xy-og6"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1411" y="456"/>
         </scene>
-        <!--Add Controller-->
+        <!--Add Room Controller-->
         <scene sceneID="nhk-7I-bDG">
             <objects>
-                <viewController id="MrT-T5-fZV" customClass="AddController" customModule="Alive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MrT-T5-fZV" customClass="AddRoomController" customModule="Alive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fYx-Xv-DBM"/>
                         <viewControllerLayoutGuide type="bottom" id="8kY-MP-6dW"/>
@@ -354,7 +364,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createRoomClicked:" destination="MrT-T5-fZV" eventType="touchUpInside" id="GdY-H1-tVa"/>
+                                    <action selector="createRoomClicked:" destination="MrT-T5-fZV" eventType="touchUpInside" id="Wsj-nK-v62"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-49-Ys4">
@@ -373,7 +383,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="customBack:" destination="MrT-T5-fZV" eventType="touchUpInside" id="2sp-n7-lp0"/>
+                                    <action selector="customBackClicked:" destination="MrT-T5-fZV" eventType="touchUpInside" id="KaZ-e5-Bzw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,10 +410,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="R1O-HV-ZcH"/>
                     <connections>
-                        <outlet property="charLeft" destination="1hN-BU-yWc" id="E4k-K0-g5S"/>
-                        <outlet property="createRoom" destination="9zE-9t-8hu" id="LmI-ks-C8b"/>
-                        <outlet property="customBack" destination="nCY-Cq-P4o" id="gv1-fJ-STW"/>
-                        <outlet property="roomNameTF" destination="z9P-49-Ys4" id="J2A-mi-dOb"/>
+                        <outlet property="charLeft" destination="1hN-BU-yWc" id="EyR-Qp-6Uh"/>
+                        <outlet property="createRoom" destination="9zE-9t-8hu" id="Qf3-hf-fEG"/>
+                        <outlet property="customBack" destination="nCY-Cq-P4o" id="FEa-vL-WVB"/>
+                        <outlet property="roomNameTF" destination="z9P-49-Ys4" id="hbm-A6-thf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdt-0i-PWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,7 +523,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="customBack:" destination="MrT-T5-fZV" eventType="touchUpInside" id="kOe-5t-6NR"/>
                                     <action selector="goBack:" destination="8mA-ua-GSF" eventType="touchUpInside" id="W8G-CY-WSx"/>
                                 </connections>
                             </button>

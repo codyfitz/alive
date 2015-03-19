@@ -26,9 +26,9 @@ public class HTTPEndpoint {
         self.authenticate = authenticate
     }
     
-    func request( var parameters: Dictionary<String, String>!,
+    func request( var parameters: Dictionary<String, String>,
         sender: UIViewController,
-        completionHandler: ( (package:JSON!) -> Void )?){
+        completionHandler: ((package:JSON!) -> Void)?){
         
         let userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let access_token: String? = userDefault.objectForKey("access_token") as String?
@@ -65,7 +65,7 @@ public class HTTPEndpoint {
                 
                 if parsedJSON["success"] == true {
                     if let c = completionHandler {
-                        c(pacakge: parsedJSON["package"])
+                        c(package: parsedJSON["package"])
                     }
                 } else {
                     let errorMessage: String! = parsedJSON["message"].string

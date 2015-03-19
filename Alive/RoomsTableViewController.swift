@@ -12,7 +12,7 @@ import SwiftyJSON
 import Starscream
 
 
-class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class RoomsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     let baseURL = "http://localhost:8080"
     let webSocketHost = "localhost:8080"
@@ -94,6 +94,24 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
         cell.textLabel?.font = UIFont(name: "Calibri-Bold", size: 30)
     }
     
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // take the entered keyword
+        println("\(textField.text)")
+        
+        // make a request to get /room/:query
+        
+        let searchRooms = HTTPEndpoint(method: .GET, route: "/room", encoding: .URL, authenticate: false)
+        
+        searchRooms.request(["query":textField.text], sender: self, completionHandler: {
+            (package) -> Void in
+            // put search results in table
+        })
+        
+        return true;
+    }
+    
+    
     /* HELPER FUNCTIONS */
     
     func getRooms(){
@@ -127,10 +145,6 @@ class RoomsTableViewController: UIViewController, UITableViewDataSource, UITable
                 vc.socket = self.socket
             }
         }
-        
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 
 }
