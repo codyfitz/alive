@@ -32,21 +32,21 @@ class AddRoomController: UIViewController {
             return
         }
         
-        let postRoomEndpoint:HTTPEndpoint! = HTTPEndpoint(method: .GET, route: "/room", encoding: .JSON, authenticate: true)
-       
-      
-        /*
-        postRoomEndpoint.request(
-            //["room_name" : (self.roomNameTF.text)],
-            sender: self,
-            completionHandler: {
-                (package:JSON!) -> Void in
-                self.navigationController?.popToRootViewControllerAnimated(true)
-        })*/
+        postRoom(self.roomNameTF.text)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func postRoom(name: String!){
+        
+        let endpoint: HTTPEndpoint! = HTTPEndpoint(method: .GET, route: "/room", encoding: .JSON, authenticate: true)
+        
+        endpoint.request(["room_name": name], sender: self, completionHandler: {
+            (package: JSON!) -> Void in
+            println("yea worked")
+        })
         
     }
     
